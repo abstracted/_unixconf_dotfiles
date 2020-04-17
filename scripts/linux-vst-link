@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+find ~/.wine/drive_c/Program\ Files\ \(x86\)/Steinberg/VSTPlugins -iname "*.dll" -execdir w2lvst2 {} \;
+find ~/.wine/drive_c/Program\ Files\ \(x86\)/VSTPlugins -iname "*.dll" -execdir w2lvst2 {} \;

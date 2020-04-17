@@ -1,0 +1,152 @@
+
+#!/usr/bin/env bash
+#           _     _       _          
+#  _____  _| |__ | | ____| |_ __ ___ 
+# / __\ \/ / '_ \| |/ / _` | '__/ __|
+# \__ \>  <| | | |   < (_| | | | (__ 
+# |___/_/\_\_| |_|_|\_\__,_|_|  \___|
+#                                    
+
+#█▓▒░  TERMINAL EMULATORl
+super + Return
+	kitty
+
+#█▓▒░  PROGRAM LAUNCHER
+super + @space
+	~/.scripts/albert-launch
+	# ~/.scripts/rofi-launch
+
+#█▓▒░  APPLICATION SWITCHER
+super + Tab
+	~/.scripts/rofi-switch
+
+#█▓▒░  MEDIA CONTROLS
+
+XF86AudioRaiseVolume
+	~/.scripts/volume up
+
+XF86AudioLowerVolume
+	~/.scripts/volume down
+
+XF86AudioMute
+	~/.scripts/volume mute
+	
+XF86MonBrightnessDown
+	~/.scripts/light -U 5 
+
+XF86MonBrightnessUp
+	~/.scripts/light -A 5
+
+XF86Sleep
+	systemctl suspend
+
+Print
+	mkdir -p ~/Pictures/Screenshots && scrot ~/Pictures/Screenshots/"Screenshot_$(date | sed -E 's/\s/_/g').png"
+
+shift + Print
+	mkdir -p ~/Pictures/Screenshots && scrot -u ~/Pictures/Screenshots/"Screenshot_$(date | sed -E 's/\s/_/g').png"
+
+#█▓▒░  BSPWM: KILL / LOGOUT / LOCK
+
+# quit/restart bspwm / log out of session
+#	bspc {quit,wm -r}
+
+# close application
+{super + q, super + Delete}
+	bspc node -c
+
+# kill application
+{ctrl + shift + q, super + shift + Delete}
+	bspc node -k
+
+# xkill: point and click app killer
+super + Escape
+	xkill
+ 
+#█▓▒░  BSPWM: LAYOUT / STATE
+ 
+# set the node flags
+# sticky: make node sticky
+# locked: prevent node from closing
+# private: maitain size and position of node
+super + ctrl + {l,s,p}
+	bspc node -g {locked,sticky,private}
+
+# set the window state
+{@F9,@F10,@F11}
+	bspc node -t {tiled,floating,fullscreen}
+
+# set the window state for all nodes
+super + {@F9,@F10}
+	~/.scripts/bspwm/bspcp {tile,float}
+
+# alternate between the tiled and monocle layout
+# @F12
+# 	bspc desktop -l next
+
+#█▓▒░  BSPWM: FOCUS / RESIZE / MOVE
+
+# focus the node in the given direction
+super + {Left,Down,Up,Right}
+	~/.scripts/bspwm/focus_mover {west,south,north,east}
+
+# resize the node in the given direction
+super + ctrl + {Left,Down,Up,Right}
+	~/.scripts/bspwm/node_resizer {west,south,north,east}
+
+# move the node in the given direction
+super + shift + {Left,Down,Up,Right}
+	~/.scripts/bspwm/node_mover {west,south,north,east}
+
+#█▓▒░  BSPWM: PRESEL
+
+# presel window for splitting in certain direction
+super + alt + {Left,Down,Up,Right}
+	bspc node -p \~{west,south,north,east}
+
+# set presel ratio
+super + alt + {1-9}
+	bspc node -o 0.{1-9}
+
+#█▓▒░  BSPWM: ROTATE
+super + shift + bracket{left,right}
+	~/.scripts/bspwm/node_rotator {west node,east node}
+
+super + bracket{left,right}
+	~/.scripts/bspwm/node_rotator {west window,east window}
+
+#█▓▒░  BSPWM: DESKTOPS
+
+# switch focus to desktop
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+# switch node and focus to desktop
+super + shift + {1-9,0}
+	CUR_NODE=$(bspc query -N -n) && bspc node -d '^{1-9,10}' && bspc node -f $CUR_NODE
+
+#█▓▒░  BSPWM: GAP CONTROL
+
+# Expands or contracts the gaps
+super + button{4,5}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
+# Toggle autogap
+super + g
+	pgrep autogap || ~/.scripts/bspwm/autogap && pkill autogap
+
+#█▓▒░  BSPWM: EQUALIZE / PROMOTE
+
+# node promoter; attempts to put the current node in the biggest spot, creating it if necessary
+super + Insert
+	CUR_NODE=$(bspc query -N -n) && bspc node -n @/ ; bspc node -s biggest.local ; bspc node -f $CUR_NODE
+
+# Attempts to equalize nodes
+super + shift + Insert
+	bspc node @/ -B
+	
+#█▓▒░  BSPWM: MOUSE
+
+super + shift + ~button3
+	~/.scripts/mygtkmenui -- ~/.config/GTKmenu/BspwmDesktopMenui
+

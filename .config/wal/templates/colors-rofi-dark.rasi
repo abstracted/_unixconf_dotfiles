@@ -1,0 +1,169 @@
+ * {{
+    color-0: {color0};
+    color-1: {color1};
+    color-2: {color2};
+    color-3: {color3};
+    color-4: {color4};
+    color-5: {color5};
+    color-6: {color6};
+    color-7: {color7};
+
+    background: {background};
+    foreground: @color-7;
+
+    bg-opacity-0: {background}44;
+
+    listview-bg: {background}66;
+    inputbar-bg: {background}66;
+
+    background-color: @bg-opacity-0;
+
+    active-background: @background-color;
+    active-foreground: @foreground;
+    normal-background: @background-color;
+    normal-foreground: @foreground;
+    urgent-background: @background-color;
+    urgent-foreground: @foreground;
+
+    alternate-active-background: {color1}aa;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: {color1}12;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: {color4}aa;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: {color1}66;
+    selected-active-foreground: @foreground;
+    selected-normal-background: {color2}66;
+    selected-normal-foreground: @foreground;
+    selected-urgent-background: {color4}66;
+    selected-urgent-foreground: @foreground;
+
+    border-color: @background;
+    spacing: 2;
+}}
+
+#window {{
+    y-offset: -240px;
+    background-color: @background-color;
+    border-radius: 10px 10px 6px 6px;
+}}
+
+#mainbox {{
+    background-color: @bg-opacity-0;
+}}
+
+#inputbar {{
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}}
+
+#inputbar {{
+    background-color: @inputbar-bg;
+    text-color: @normal-foreground;
+    padding: 16px 24px 10px 24px;
+    border: 0;
+}}
+
+#prompt {{
+    background-color: @bg-opacity-0;
+    margin: 0 14px 0 0;
+    text-color: @normal-foreground;
+    font: "Ubuntu Mono 22";
+}}
+
+#textbox-prompt-colon {{
+    background-color: @bg-opacity-0;
+    expand: false;
+    str: "";
+}}
+
+#entry {{
+    background-color: @bg-opacity-0;
+    padding: 6px 0 0 0;
+    text-color: @normal-foreground;
+    font: "Ubuntu Bold 20";
+}}
+
+#case-indicator {{
+    background-color: @bg-opacity-0;
+    spacing: 0;
+    text-color: @normal-foreground;
+}}
+
+#message {{
+    border: 0px 0px 0px;
+    border-color: @border-color;
+    padding: 0px;
+}}
+
+#textbox {{
+    text-color: @foreground;
+}}
+
+#listview {{
+    background-color: @listview-bg;
+    padding: 2px;
+    fixed-height: false;
+    scrollbar: false;
+    dynamic: true;
+    lines: 10;
+}}
+
+#element {{
+    border: 0;
+    border-radius: 3px;
+    padding: 12px 24px;
+    font: "Fantasque Sans Mono 12";
+}}
+
+#element.normal.normal {{
+    background-color: @normal-background;
+    text-color: @normal-foreground;
+}}
+
+#element.normal.urgent {{
+    background-color: @urgent-background;
+    text-color: @urgent-foreground;
+}}
+
+#element.normal.active {{
+    background-color: @active-background;
+    text-color: @active-foreground;
+}}
+
+#element.selected.normal {{
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}}
+
+#element.selected.urgent {{
+    background-color: @selected-urgent-background;
+    text-color: @selected-urgent-foreground;
+}}
+
+#element.selected.active {{
+    background-color: @selected-active-background;
+    text-color: @selected-active-foreground;
+}}
+
+#element.alternate.normal {{
+    background-color: @alternate-normal-background;
+    text-color: @alternate-normal-foreground;
+}}
+
+#element.alternate.urgent {{
+    background-color: @alternate-urgent-background;
+    text-color: @alternate-urgent-foreground;
+}}
+
+#element.alternate.active {{
+    background-color: @alternate-active-background;
+    text-color: @alternate-active-foreground;
+}}
+
+#scrollbar {{
+    width: 0;
+    border: 0;
+    handle-width: 0;
+    padding: 0;
+}}

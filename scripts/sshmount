@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# mount an sshfs drive locally
+# ex: ( sshmount $HOME/File\ Server fuse.sshfs cameron 34:e6:d7:38:29:4f /mnt/ext & )
+
+key="$HOME/.ssh/id_rsa"
+dir="$1"
+typ="$2"
+usr="$3"
+mac="$4"
+pth="$5"
+hst=$(arp | grep $mac | awk '{print $1}')
+
+( [[ -n "$hst" ]] ) && \
+( mountpoint -q $dir ) || \
+( sudo sshfs -o uid=$UID -o gid=$GID -o allow_other -o IdentityFile=${key} ${usr}@${hst}:${pth} $dir )

@@ -1,0 +1,4 @@
+/\.cache/.*(cache|Cache).*
+\.gitignore
+\.git
+README.md

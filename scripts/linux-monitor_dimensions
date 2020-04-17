@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+dim=$(xrandr | grep " connected" | head -n 1 | cut -d" " -f 3 | cut -d+ -f1)
+
+[[ "$1" == "width" ]] && echo $dim | cut -dx -f1
+[[ "$1" == "height" ]] && echo $dim | cut -dx -f2
+[[ -z "$1" ]] && echo $dim

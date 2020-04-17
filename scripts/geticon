@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ] 
+then 
+	echo "You might need to install nerdfonts."
+	echo "Or you entered an invalid hex icon code, try looking it up at:"
+	echo "https://www.nerdfonts.com/cheat-sheet"
+else
+	ICO=$(echo "\u$1")
+    echo $ICO
+    echo $ICO | copy
+fi

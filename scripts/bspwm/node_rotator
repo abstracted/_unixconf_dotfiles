@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+#█▓▒░  INFO
+# Rotates nodes by 90 degrees, left or right
+
+#█▓▒░  USAGE
+# node_mover {west,east}
+
+DIR=$1
+CUR_NODE=$(bspc query -N -n)
+DEG="90"
+
+if [[ $DIR == "west" ]]; then
+    DEG="-90"
+fi
+
+if [[ $2 == "node" ]]; then
+    bspc node -f @parent && bspc node -R $DEG && bspc node -f $CUR_NODE
+elif [[ $2 == "window" ]]; then
+    bspc node @/ -R $DEG && bspc node -f $CUR_NODE
+fi

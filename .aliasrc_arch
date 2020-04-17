@@ -1,0 +1,29 @@
+#         _ _                                      _     
+#    __ _| (_) __ _ ___ _ __ ___     __ _ _ __ ___| |__  
+#   / _` | | |/ _` / __| '__/ __|   / _` | '__/ __| '_ \ 
+#  | (_| | | | (_| \__ \ | | (__   | (_| | | | (__| | | |
+# (_)__,_|_|_|\__,_|___/_|  \___|___\__,_|_|  \___|_| |_|
+#                              |_____|                   
+
+#█▓▒░  ALIASES
+
+alias yay='yay --noconfirm'
+alias install='yay -Syy && yay -S --needed'
+alias localinstall='yay -U'
+alias purge='yay -Rns'
+alias forcepurge='yay -Rcns'
+alias remove='yay -R'
+alias update='yay -Syy'
+alias upgrade='yay -Syyu'
+alias lspackage='yay Ql'
+alias lspackages='yay -Q'
+alias packageinfo='yay -Qi'
+alias sysinfo='clear && neofetch'
+alias mirrors='sudo pacman-key --refresh-keys && sudo reflector --verbose --country "United States" -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
+
+#█▓▒░  FUNCTIONS
+
+function search () {
+    yay -Ss $1 | less
+}
+

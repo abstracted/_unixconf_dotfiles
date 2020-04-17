@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+killall -9 -q compton
+
+while pgrep -u $UID -x compton >/dev/null
+do 
+	pkill compton
+	sleep 0.5
+done
+
+compton -b &

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Automatically detects monitors
+# Generates workspaces names dynamically using a range of provided unicode characters
+# usage: bspwm_monitor [num_workspaces] [hex_prefix] [hex_range_start]
+# exampe: bspwm_monitor 5 FF1 1 -> 5 workspaces on each monitor named "FF11 FF12 FF13 ..."
+
+bspwm_monitor() {
+  num_workspaces=$( [ -n "$1" ] && echo $1 || echo '5')
+  
+  # Use the following arguments to configure your workspaces unicode names
+  # Ex: I want U+2160 through U+2164 
+  # My args would be $1=5 , $2=216 , $3=0
+  hex_prefix=$( [ -n "$2" ] && echo $2 || echo "216")
+  hex_range_start=$( [ -n "$3" ] && echo $3 || echo '0')
+
+  # monitor counter
+  i=0
+
+  for monitor in $(xrandr | grep -v disconnected | grep connected | cut -d" " -f1); 
+  do   
+    (( i++ ));
+    
+    # the below block is for generating the unicode characters for the workspaces
+    workspaces=''
+    end_index=$(( $i * $num_workspaces ))
+    start_index=$(( $end_index - (( $end_index / $i )) ))
+    for (( k=$start_index; k<$end_index; k++ ));
+    do
+      adjusted_start=$(( $k + $hex_range_start ))
+      hex_suffix=$(printf '%x\n' $adjusted_start )
+      unicode_icon=$(echo -e "\u${hex_prefix}${hex_suffix}")
+      workspaces="${workspaces} $unicode_icon";
+    done
+    # the above block is for generating the unicode characters for the workspaces
+
+    # Sets the monitors and workspaces
+    bspc monitor $monitor -d $workspaces
+  done
+}

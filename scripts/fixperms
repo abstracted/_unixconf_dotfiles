@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo find ./ -type d -exec chmod 755 {} \;
+sudo find ./ -type f -exec chmod 644 {} \;
+sudo chown -Rv "${1}"."${1}" ./

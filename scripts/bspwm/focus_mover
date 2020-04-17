@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+#█▓▒░  INFO
+# Focus nodes by direction, works across monitors / desktops
+# If navigating north / south and reached the end;
+#   it will jump to the next / previous desktop for the current monitor.
+
+#█▓▒░  USAGE
+# focus_mover {west,south,north,east}
+
+DIR=$@
+
+function getDesktops { 
+    list=$(bspc query -D -m); 
+    echo -e "$list\n$list";
+}
+
+DSK_CUR=$(bspc query -D -d)
+DSK_NXT=$(getDesktops | grep -A 1 $DSK_CUR | head -n 2 | grep -v $DSK_CUR)
+DSK_PRV=$(getDesktops | grep -B 1 $DSK_CUR | tail -n 2 | grep -v $DSK_CUR)
+
+( bspc node -f $DIR ) || \
+( bspc monitor -f $DIR ) || \
+( [[ $DIR == 'north' ]] && bspc desktop -f $DSK_NXT ) || \
+( [[ $DIR == 'south' ]] && bspc desktop -f $DSK_PRV )

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# mount an external drive locally
+# ex: ( localmount $HOME/External\ Drive ext4 e1d838a5-96a3-40a6-b948-e61227f56d1c & )
+
+dir="$1"
+typ="$2"
+uuid=$(ls -1 /dev/disk/by-uuid | grep $3)
+( [[ -n "$uuid" ]] ) && \
+( mountpoint -q $dir ) || \
+( sudo mount -t $typ -U $uuid $dir ) && \
+( sudo find $dir -not -uid $UID -exec chown ${UID}:${GID} {} \; )

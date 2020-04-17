@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+#█▓▒░  INFO
+# Moves nodes by direction, works across monitors / desktops
+# If navigating north / south and reached the end;
+#   it will jump to the next / previous desktop for the current monitor.
+
+#█▓▒░  USAGE
+# node_mover {west,south,north,east}
+
+DIR=$@
+size=${2:-'20'}
+
+# Find current window mode
+is_floating() {
+  bspc query -T -n | grep -q '"state":"floating"'
+}
+# If the window is floating, move it
+if is_floating; then
+  # only parse input if window is floating,tiled windows accept input as is
+  case "$DIR" in
+  west)
+    switch="-x"
+    sign="-"
+    ;;
+  east)
+    switch="-x"
+    sign="+"
+    ;;
+  north)
+    switch="-y"
+    sign="-"
+    ;;
+  *)
+    switch="-y"
+    sign="+"
+    ;;
+  esac
+  xdo move ${switch} ${sign}${size}
+
+# Otherwise, window is tiled: switch with window in given direction
+else
+  function getDesktops() {
+    local list=$(bspc query -D -m)
+    echo -e "$list\n$list"
+  }
+
+  CUR_NODE=$(bspc query -N -n)
+  DSK_CUR=$(bspc query -D -d)
+  DSK_NXT=$(getDesktops | grep -A 1 $DSK_CUR | head -n 2 | grep -v $DSK_CUR)
+  DSK_PRV=$(getDesktops | grep -B 1 $DSK_CUR | tail -n 2 | grep -v $DSK_CUR)
+
+# Try to move to the next node over, but don't force because ...
+  ( bspc node -n ${DIR}.!automatic ) || \
+# We want to check if there are any adjacent nodes on the current desktop, then swap
+# (We don't want to swap with nodes on other monitors, that's why we check only the current desktop)
+  ( bspc query -N -n ${DIR}.local && bspc node -s ${DIR} ) || \
+# If there aren't any more nodes to swap, try automatically moving the node in the specified direction
+  ( bspc node -n $DIR ) || \
+# If we've reached the horizontal boundary of the monitor, move the node to the monitor in the direction we specified
+  ( bspc node -m $DIR ) || \
+# Move to the next or previous desktop / workspace if moving out of bounds from north or south
+  ( [[ $DIR == "north" ]] && bspc node -d $DSK_NXT --follow ) || \
+  ( [[ $DIR == "south" ]] && bspc node -d $DSK_PRV --follow ) && \
+# Always keep focus on the node that was moved
+  ( bspc node -f $CUR_NODE )
+
+fi
