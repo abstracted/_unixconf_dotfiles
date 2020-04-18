@@ -41,7 +41,13 @@ alias gra='git remote add'
 function sourceIf() {
   [ -e "$1" ] && source $1
 }
-sourceIf $HOME/.localrc
+function fpathIf() {
+  [ -e "$1" ] && fpath=($1 $fpath)
+}
+sourceIf /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpathIf /usr/local/share/zsh-completions
 
 #█▓▒░  OPTIONS
 setopt autocd
@@ -113,6 +119,7 @@ export LESS="--RAW-CONTROL-CHARS";
 #█▓▒░  VARS
 export PATH="$PATH:$HOME/scripts";
 export PATH="$PATH:$HOME/.node_modules/bin";
+export PATH="$PATH:$HOME/.cargo/bin";
 export QT_QPA_PLATFORMTHEME="qt5ct";
 export TERM=xterm
 
