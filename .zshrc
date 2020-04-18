@@ -4,6 +4,17 @@
 #  _ / /\__ \ | | | | | (__ 
 # (_)___|___/_| |_|_|  \___|
 
+#█▓▒░ FUNCTIONS
+function pathIf () {
+  [ -e "$1" ] && export PATH="$PATH:$1";
+}
+function sourceIf() {
+  [ -e "$1" ] && source $1
+}
+function fpathIf() {
+  [ -e "$1" ] && fpath=($1 $fpath)
+}
+
 #█▓▒░  ALIAS
 alias clearhistory='cat /dev/null > $HOME/.zsh_history ; exit'
 alias grep="grep -E"
@@ -15,6 +26,7 @@ alias lsip="curl http://ipecho.net/plain; echo"
 alias route='netstat -rn'
 alias vi='vim'
 
+#█▓▒░  GIT
 function gcm() { 
   git commit -m $1 
 }
@@ -38,12 +50,6 @@ alias gra='git remote add'
 
 
 #█▓▒░  IMPORTS
-function sourceIf() {
-  [ -e "$1" ] && source $1
-}
-function fpathIf() {
-  [ -e "$1" ] && fpath=($1 $fpath)
-}
 sourceIf /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -117,11 +123,14 @@ export LESS_TERMCAP_ZW="$(tput rsupm)";
 export LESS="--RAW-CONTROL-CHARS";
 
 #█▓▒░  VARS
-export PATH="$PATH:$HOME/scripts";
-export PATH="$PATH:$HOME/.node_modules/bin";
-export PATH="$PATH:$HOME/.cargo/bin";
 export QT_QPA_PLATFORMTHEME="qt5ct";
 export TERM=xterm
+
+#█▓▒░  PATH
+pathIf "$HOME/scripts"
+pathIf "$HOME/.node_modules/bin"
+pathIf "$HOME/.cargo/bin"
+pathIf "/usr/local/bin"
 
 #█▓▒░  PROMPT
 eval "$(starship init zsh)"
