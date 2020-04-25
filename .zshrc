@@ -50,6 +50,10 @@ alias gra='git remote add'
 
 
 #█▓▒░  IMPORTS
+sourceIf /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+sourceIf /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+sourceIf /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 sourceIf /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
