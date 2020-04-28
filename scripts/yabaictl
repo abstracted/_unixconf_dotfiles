@@ -1,0 +1,151 @@
+#!/usr/bin/env node
+const system = require('child_process')
+
+/**
+* Function to issue bash commands, returns the stdout.
+* @param command
+* @returns {string} stdout
+*/
+function shell (command, ...args) {
+  const shell_args = args.length ? args : []
+  let shell_out = ''
+  try {
+    shell_out = system.spawnSync(command, shell_args)
+  } catch(error) {
+    shell_out = error
+  }
+
+  return {
+    status: shell_out.status,
+    stdout: shell_out.stdout.toString(),
+    stderr: shell_out.stderr.toString()
+  }
+}
+
+function direction_reverse (direction) {
+  switch(direction) {
+    case "east":
+      return "west"
+    case "west":
+      return "east"
+    case "south":
+      return "north"
+    case "north":
+      return "south"
+  }
+}
+
+function workspace_next (direction) {
+  switch(direction) {
+    case "east":
+      return "next"
+    case "west":
+      return "prev"
+    case "south":
+      return "next"
+    case "north":
+      return "prev"
+  }
+}
+
+function workspace_type (direction) {
+  switch(direction) {
+    case "east":
+      return "display"
+    case "west":
+      return "display"
+    case "south":
+      return "space"
+    case "north":
+      return "space"
+  }
+}
+
+function workspace_reverse(workspace) {
+  switch(workspace) {
+    case "next":
+      return "prev"
+    case "prev":
+      return "next"
+  }
+}
+
+function position_adjacent (direction) {
+  switch(direction) {
+    case "east":
+      return "first"
+    case "west":
+      return "last"
+    case "south":
+      return "first"
+    case "north":
+      return "last"
+  }
+}
+
+function position_reverse (position) {
+  switch(position) {
+    case "first":
+      return "last"
+    case "last":
+      return "first"
+  }
+}
+
+function get_info (direction) {
+  const dir_rev = direction_reverse(direction)
+  const wrk_nxt = workspace_next(direction)
+  const wrk_typ = workspace_type(direction)
+  const wrk_rev = workspace_reverse(wrk_nxt)
+  const pos_adj = position_adjacent(direction)
+  const pos_rev = position_reverse(pos_adj)
+
+  return {
+    dir_rev,
+    wrk_nxt,
+    wrk_typ,
+    wrk_rev,
+    pos_adj,
+    pos_rev
+  }
+}
+
+function yabai_message(type, action, direction) {
+  return shell('yabai', '-m', type, `--${action}`, direction)
+}
+
+function yabai_focus(direction, info) {
+  let f = yabai_message('window', 'focus', direction)
+  if (f.status !== 0) {
+    f = yabai_message(info.wrk_typ, 'focus', info.wrk_nxt)
+
+    if (f.status !== 0) {
+      yabai_message(info.wrk_typ, 'focus', info.wrk_rev)
+    }
+
+    yabai_message('window', 'focus', info.pos_adj)
+  }
+}
+
+async function main () {
+  const args = process.argv
+  const action = args[2]
+  const direction = args[3]
+  const info = get_info(direction)
+
+  switch (action) {
+    case 'focus':
+      yabai_focus(direction, info)
+      break
+    default:
+      // TODO:
+      console.warn('warn about no valid action being passed')
+      break
+  }
+}
+
+try {
+  main()
+} catch (error) {
+  console.error(error)
+}
