@@ -140,4 +140,4 @@ pathIf "/usr/local/bin"
 eval "$(starship init zsh)"
 
 #█▓▒░  MOTD
-(eval "nohup wal -Rn" > /dev/null 2>&1 &) ; clear ; neofetch
+(eval "nohup wal -Rn" > /dev/null 2>&1 &)
