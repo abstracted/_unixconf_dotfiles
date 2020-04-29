@@ -16,10 +16,20 @@
 	<false/>
 	<key>Default Bookmark Guid</key>
 	<string>8D3E6CC3-6748-4DFD-9018-6D5FCA90BA37</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<true/>
 	<key>EnableDivisionView</key>
 	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideActivityIndicator</key>
+	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -82,11 +92,15 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>-1381 440 841 470 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1930 193 1242 839 1920 0 1920 1057 </string>
+	<string>2885 26 945 1021 1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1933 484 756 559 1920 0 1920 1057 </string>
+	<string>3031 450 756 559 1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>268 80 676 558 0 0 1920 1057 </string>
+	<string>3203 26 621 499 1920 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>3363 26 468 499 1920 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>3363 10 468 339 1920 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -838,14 +852,14 @@
 		<key>screenFrame</key>
 		<string>{{1920, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{2687, 947}</string>
+		<string>{2219, 941}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>BB3BBB72-D786-4442-8C4A-9FCCE58EFD5A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>63</integer>
+	<integer>67</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1620,8 +1634,14 @@
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.16605995124113476</real>
+	<key>StatusBarPosition</key>
+	<integer>0</integer>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>4</integer>
+	<integer>5</integer>
+	<key>TabViewType</key>
+	<integer>0</integer>
 	<key>TerminalMargin</key>
 	<integer>18</integer>
 	<key>TerminalVMargin</key>
