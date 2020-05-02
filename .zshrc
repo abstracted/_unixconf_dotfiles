@@ -16,6 +16,8 @@ function fpathIf() {
 }
 
 #█▓▒░  ALIAS
+[[ `uname` == "Linux" ]] && source .aliasrc_arch
+[[ `uname` == "Darwin" ]] && source .aliasrc_osx
 alias clearhistory='cat /dev/null > $HOME/.zsh_history ; exit'
 alias grep="grep -E"
 alias ll='ls -lah'
@@ -139,5 +141,5 @@ pathIf "/usr/local/bin"
 #█▓▒░  PROMPT
 eval "$(starship init zsh)"
 
-#█▓▒░  MOTD
+#█▓▒░  STARTUP
 (eval "nohup wal -Rn" > /dev/null 2>&1 &)
