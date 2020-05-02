@@ -77,6 +77,15 @@
 # ############################################################### #
 
 # focus window
+cmd - right : $HOME/scripts/yabaictl focus east
+
+cmd - left : $HOME/scripts/yabaictl focus west
+
+cmd - down : yabai -m window --focus south || ( yabai -m space --focus prev ; yabai -m window --focus first )
+
+cmd - up : yabai -m window --focus north || ( yabai -m space --focus next ; yabai -m window --focus last )
+
+# focus window
 # alt - h : yabai -m window --focus west
 
 # swap managed window

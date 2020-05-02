@@ -9,7 +9,7 @@ CNORM=$(echo $color1 | sed 's/#//')
 CINSE=$(echo $foreground | sed 's/#//')
 
 # border
-yabai -m config window_border                off
+yabai -m config window_border                on
 yabai -m config window_border_width          4
 yabai -m config active_window_border_color   0xff$CACTV
 yabai -m config normal_window_border_color   0xff$CNORM
@@ -39,7 +39,7 @@ yabai -m config window_topmost               off
 yabai -m config mouse_modifier               cmd
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
-yabai -m config mouse_follows_focus          off
+yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          off
 
 echo "yabai configuration loaded.."
