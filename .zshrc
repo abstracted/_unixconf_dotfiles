@@ -50,9 +50,11 @@ alias gpsup='git push --set-upstream origin $(git_current_branch)'
 alias gpu='git push upstream'
 alias gr='git remote'
 alias gra='git remote add'
+alias grhh="git reset --hard"
 
 
 #█▓▒░  IMPORTS
+sourceIf $HOME/.fzf.zsh
 sourceIf /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 sourceIf /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 sourceIf /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -145,4 +147,3 @@ eval "$(starship init zsh)"
 #█▓▒░  STARTUP
 (eval "nohup wal -Rn" > /dev/null 2>&1 &)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
