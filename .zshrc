@@ -27,6 +27,7 @@ alias lsports="clear ; namp -sS -T aggressive localhost"
 alias lsip="curl http://ipecho.net/plain; echo"
 alias route='netstat -rn'
 alias vi='vim'
+alias vim='nvim'
 
 #█▓▒░  GIT
 function gcm() { 
@@ -143,3 +144,5 @@ eval "$(starship init zsh)"
 
 #█▓▒░  STARTUP
 (eval "nohup wal -Rn" > /dev/null 2>&1 &)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
