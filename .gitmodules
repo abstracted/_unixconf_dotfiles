@@ -1,3 +1,6 @@
 [submodule ".SpaceVim"]
 	path = .SpaceVim
 	url = https://github.com/SpaceVim/SpaceVim.git
+[submodule "scripts/intellijPywal"]
+	path = scripts/intellijPywal
+	url = git@github.com:abstracted/intellijPywal.git
