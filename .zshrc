@@ -16,8 +16,8 @@ function fpathIf() {
 }
 
 #█▓▒░  ALIAS
-[[ `uname` == "Linux" ]] && source .aliasrc_arch
-[[ `uname` == "Darwin" ]] && source .aliasrc_osx
+[[ `uname` == "Linux" ]] && sourceIf $HOME/.aliasrc_arch
+[[ `uname` == "Darwin" ]] && sourceIf $HOME/.aliasrc_osx
 alias clearhistory='cat /dev/null > $HOME/.zsh_history ; exit'
 alias grep="grep -E"
 alias ll='ls -lah'
