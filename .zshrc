@@ -15,6 +15,10 @@ function fpathIf() {
   [ -e "$1" ] && fpath=($1 $fpath)
 }
 
+#█▓▒░ MODULES
+autoload -Uz compinit
+compinit
+
 #█▓▒░  ALIAS
 [[ `uname` == "Linux" ]] && sourceIf $HOME/.aliasrc_arch
 [[ `uname` == "Darwin" ]] && sourceIf $HOME/.aliasrc_osx
