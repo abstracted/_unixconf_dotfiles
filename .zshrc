@@ -54,15 +54,17 @@ alias grhh="git reset --hard"
 
 
 #█▓▒░  IMPORTS
+sourceIf $HOME/.customrc
 sourceIf $HOME/.fzf.zsh
-sourceIf /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-sourceIf /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-sourceIf /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-sourceIf /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpathIf /usr/local/share/zsh-completions
+
+sourceIf /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+sourceIf /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+sourceIf /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+sourceIf /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 #█▓▒░  OPTIONS
 setopt autocd
