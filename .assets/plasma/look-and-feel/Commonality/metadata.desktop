@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=Bringing retro goodness back to Plasma
+Name=Commonality
+X-KDE-PluginInfo-Author=Phobian
+X-KDE-PluginInfo-Category=Plasma Look And Feel
+X-KDE-PluginInfo-Email=smithmark347@gmail.com
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=GPL 3+
+X-KDE-PluginInfo-Name=Commonality
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=https://www.pling.com/u/phob1an/
+X-KDE-ServiceTypes=Plasma/LookAndFeel
+X-KPackage-Dependencies=kns://aurorae.knsrc/api.kde-look.org/1314025,kns://colorschemes.knsrc/api.kde-look.org/1314023,kns://plasma-themes.knsrc/api.kde-look.org/1314502,kns://wallpaper.knsrc/api.kde-look.org/1314028
