@@ -7,7 +7,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="2"/>
-          <property name="last-image" type="string" value="/home/cameron/.backgrounds/Chicago95/Patterns/Daisies.png"/>
+          <property name="last-image" type="string" value="/home/cameron/.backgrounds/SGI/tiles/rockfacesmall.xpm"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -29,7 +29,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="2"/>
-          <property name="last-image" type="string" value="/home/cameron/.backgrounds/Chicago95/Patterns/Thatches.png"/>
+          <property name="last-image" type="string" value="/home/cameron/.backgrounds/SGI/tiles/rockfacesmall.xpm"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -53,7 +53,7 @@
   </property>
   <property name="last" type="empty">
     <property name="window-width" type="int" value="731"/>
-    <property name="window-height" type="int" value="671"/>
+    <property name="window-height" type="int" value="687"/>
   </property>
   <property name="desktop-icons" type="empty">
     <property name="show-thumbnails" type="bool" value="true"/>

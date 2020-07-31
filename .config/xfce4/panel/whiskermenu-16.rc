@@ -1,5 +1,5 @@
 favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,exo-terminal-emulator.desktop
-recent=mscore.desktop,bitwig-studio.desktop,gimp.desktop,xfce4-appfinder.desktop,exo-web-browser.desktop,claws-mail.desktop,org.gnome.Evolution.desktop,exo-mail-reader.desktop,balena-etcher-electron.desktop
+recent=exo-web-browser.desktop,exo-file-manager.desktop,firefox.desktop,exo-terminal-emulator.desktop,pavucontrol.desktop,mscore.desktop,bitwig-studio.desktop,gimp.desktop,xfce4-appfinder.desktop,org.gnome.Evolution.desktop
 button-icon=computer
 button-single-row=false
 show-button-title=false

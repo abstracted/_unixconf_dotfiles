@@ -1,8 +1,8 @@
-app=none
+app=feh
 last_user=
 screenshot_dir=file:///home/cameron
-action=1
+action=2
 delay=0
-region=1
+region=3
 show_mouse=1
 
