@@ -1,6 +1,175 @@
 [submodule ".SpaceVim"]
 	path = .SpaceVim
 	url = https://github.com/SpaceVim/SpaceVim.git
-[submodule "scripts/intellijPywal"]
-	path = scripts/intellijPywal
-	url = git@github.com:abstracted/intellijPywal.git
+
+[submodule ".themes/Windows-10"]
+	path = .themes/Windows-10
+	url = https://github.com/B00merang-Project/Windows-10.git
+[submodule ".themes/macOS"]
+	path = .themes/macOS
+	url = https://github.com/B00merang-Project/macOS
+[submodule ".themes/Android"]
+	path = .themes/Android
+	url = https://github.com/B00merang-Project/Android.git
+[submodule ".themes/Solaris-9"]
+	path = .themes/Solaris-9
+	url = https://github.com/B00merang-Project/Solaris-9.git
+[submodule ".themes/Haiku"]
+	path = .themes/Haiku
+	url = https://github.com/B00merang-Project/Haiku.git
+[submodule ".themes/iOS"]
+	path = .themes/iOS
+	url = https://github.com/B00merang-Project/iOS.git
+[submodule ".themes/Windows-XP"]
+	path = .themes/Windows-XP
+	url = https://github.com/B00merang-Project/Windows-XP.git
+[submodule ".themes/Windows-Whistler"]
+	path = .themes/Windows-Whistler
+	url = https://github.com/B00merang-Project/Windows-Whistler.git
+[submodule ".themes/Windows-Vista"]
+	path = .themes/Windows-Vista
+	url = https://github.com/B00merang-Project/Windows-Vista.git
+[submodule ".themes/Windows-95"]
+	path = .themes/Windows-95
+	url = https://github.com/B00merang-Project/Windows-95.git
+[submodule ".themes/Windows-8.1"]
+	path = .themes/Windows-8.1
+	url = https://github.com/B00merang-Project/Windows-8.1.git
+[submodule ".themes/Windows-7"]
+	path = .themes/Windows-7
+	url = https://github.com/B00merang-Project/Windows-7.git
+[submodule ".themes/Windows-3.11"]
+	path = .themes/Windows-3.11
+	url = https://github.com/B00merang-Project/Windows-3.11.git
+[submodule ".themes/Windows-2.0"]
+	path = .themes/Windows-2.0
+	url = https://github.com/B00merang-Project/Windows-2.0.git
+[submodule ".themes/Windows-1.0"]
+	path = .themes/Windows-1.0
+	url = https://github.com/B00merang-Project/Windows-1.0.git
+[submodule ".themes/watchOS"]
+	path = .themes/watchOS
+	url = https://github.com/B00merang-Project/watchOS.git
+[submodule ".themes/Wear-OS"]
+	path = .themes/Wear-OS
+	url = https://github.com/B00merang-Project/Wear-OS.git
+[submodule ".themes/Unity-8"]
+	path = .themes/Unity-8
+	url = https://github.com/B00merang-Project/Unity-8.git
+[submodule ".themes/Unity-7"]
+	path = .themes/Unity-7
+	url = https://github.com/B00merang-Project/Unity-7.git
+[submodule ".themes/System-4"]
+	path = .themes/System-4
+	url = https://github.com/B00merang-Project/System-4.git
+[submodule ".themes/Solaris-8"]
+	path = .themes/Solaris-8
+	url = https://github.com/B00merang-Project/Solaris-8.git
+[submodule ".themes/Solaris-11-Dark"]
+	path = .themes/Solaris-11-Dark
+	url = https://github.com/B00merang-Project/Solaris-11-Dark.git
+[submodule ".themes/Solaris-11-Light"]
+	path = .themes/Solaris-11-Light
+	url = https://github.com/B00merang-Project/Solaris-11-Light.git
+[submodule ".themes/Solaris-11"]
+	path = .themes/Solaris-11
+	url = https://github.com/B00merang-Project/Solaris-11.git
+[submodule ".themes/Solaris-10"]
+	path = .themes/Solaris-10
+	url = https://github.com/B00merang-Project/Solaris-10.git
+[submodule ".themes/OS-X-Mavericks"]
+	path = .themes/OS-X-Mavericks
+	url = https://github.com/B00merang-Project/OS-X-Mavericks.git
+[submodule ".themes/OS-X-Leopard"]
+	path = .themes/OS-X-Leopard
+	url = https://github.com/B00merang-Project/OS-X-Leopard.git
+[submodule ".themes/OS-2-Warp-4"]
+	path = .themes/OS-2-Warp-4
+	url = https://github.com/B00merang-Project/OS-2-Warp-4.git
+[submodule ".themes/Mac-OS-X-Cheetah"]
+	path = .themes/Mac-OS-X-Cheetah
+	url = https://github.com/B00merang-Project/Mac-OS-X-Cheetah.git
+[submodule ".themes/Mac-OS-9-Classic"]
+	path = .themes/Mac-OS-9-Classic
+	url = https://github.com/B00merang-Project/Mac-OS-9-Classic.git
+[submodule ".themes/Human"]
+	path = .themes/Human
+	url = https://github.com/B00merang-Project/Human.git
+[submodule ".themes/iOS-4"]
+	path = .themes/iOS-4
+	url = https://github.com/B00merang-Project/iOS-4.git
+[submodule ".themes/Chrome-OS"]
+	path = .themes/Chrome-OS
+	url = https://github.com/B00merang-Project/Chrome-OS.git
+[submodule ".themes/Fuchsia"]
+	path = .themes/Fuchsia
+	url = https://github.com/B00merang-Project/Fuchsia.git
+[submodule ".themes/BeOS-R5"]
+	path = .themes/BeOS-R5
+	url = https://github.com/B00merang-Project/BeOS-R5.git
+[submodule ".themes/Android-4.4-Kitkat"]
+	path = .themes/Android-4.4-Kitkat
+	url = https://github.com/B00merang-Project/Android-4.4-Kitkat.git
+[submodule ".themes/Android-4.4-Kitkat-Dark"]
+	path = .themes/Android-4.4-Kitkat-Dark
+	url = https://github.com/B00merang-Project/Android-4.4-Kitkat-Dark.git
+[submodule ".themes/macOS-Dark"]
+	path = .themes/macOS-Dark
+	url = https://github.com/B00merang-Project/macOS-Dark.git
+[submodule ".themes/macOS-Catalina-Dark"]
+	path = .themes/macOS-Catalina-Dark
+	url = https://github.com/B00merang-Project/macOS-Catalina-Dark.git
+[submodule ".themes/macOS-Catalina"]
+	path = .themes/macOS-Catalina
+	url = https://github.com/B00merang-Project/macOS-Catalina.git
+[submodule ".themes/Windows-10-Acrylic"]
+	path = .themes/Windows-10-Acrylic
+	url = https://github.com/B00merang-Project/Windows-10-Acrylic.git
+[submodule ".themes/Windows-10-Acrylic-Dark"]
+	path = .themes/Windows-10-Acrylic-Dark
+	url = https://github.com/B00merang-Project/Windows-10-Acrylic-Dark.git
+[submodule ".themes/Windows-10-Dark"]
+	path = .themes/Windows-10-Dark
+	url = https://github.com/B00merang-Project/Windows-10-Dark.git
+[submodule ".themes/tvOS"]
+	path = .themes/tvOS
+	url = https://github.com/B00merang-Project/tvOS.git
+[submodule ".themes/Termina"]
+	path = .themes/Termina
+	url = https://github.com/B00merang-Project/Termina.git
+[submodule ".themes/Android-TV"]
+	path = .themes/Android-TV
+	url = https://github.com/B00merang-Project/Android-TV.git
+[submodule ".themes/yaru"]
+	path = .themes/yaru
+	url = https://github.com/ubuntu/yaru.git
+[submodule ".themes/Platinum9"]
+	path = .themes/Platinum9
+	url = https://github.com/Elbullazul/Platinum9.git
+[submodule ".themes/Chicago95"]
+	path = .themes/Chicago95
+	url = https://github.com/grassmunk/Chicago95.git
+[submodule ".icons/Windows-10"]
+	path = .icons/Windows-10
+	url = https://github.com/B00merang-Artwork/Windows-10.git
+[submodule ".icons/Windows-7"]
+	path = .icons/Windows-7
+	url = https://github.com/B00merang-Artwork/Windows-7.git
+[submodule ".icons/Windows-XP"]
+	path = .icons/Windows-XP
+	url = https://github.com/B00merang-Artwork/Windows-XP.git
+[submodule ".icons/Windows-10-Dark"]
+	path = .icons/Windows-10-Dark
+	url = https://github.com/B00merang-Artwork/Windows-10-Dark.git
+[submodule ".icons/Grayscale"]
+	path = .icons/Grayscale
+	url = https://github.com/B00merang-Artwork/Grayscale.git
+[submodule ".icons/Windows-8"]
+	path = .icons/Windows-8
+	url = https://github.com/B00merang-Artwork/Windows-8.git
+[submodule ".icons/Mac-OS-X-Lion"]
+	path = .icons/Mac-OS-X-Lion
+	url = https://github.com/B00merang-Artwork/Mac-OS-X-Lion.git
+[submodule ".icons/Mac-OS-X-Cheetah"]
+	path = .icons/Mac-OS-X-Cheetah
+	url = https://github.com/B00merang-Artwork/Mac-OS-X-Cheetah.git

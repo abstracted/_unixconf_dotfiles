@@ -15,6 +15,10 @@ function fpathIf() {
   [ -e "$1" ] && fpath=($1 $fpath)
 }
 
+#█▓▒░ MODULES
+autoload -Uz compinit
+compinit
+
 #█▓▒░  ALIAS
 [[ `uname` == "Linux" ]] && sourceIf $HOME/.aliasrc_arch
 [[ `uname` == "Darwin" ]] && sourceIf $HOME/.aliasrc_osx
@@ -40,7 +44,7 @@ alias gba='git branch -a'
 alias gbd='git branch -D'
 alias gc='git commit -v'
 alias gcb='git checkout -b'
-alias git_current_branch='git branch | tail -n 1 | cut -d" " -f2'
+alias git_current_branch='git branch | grep "\*" | cut -d" " -f2'
 alias gd='git diff'
 alias gf='git fetch'
 alias gfa='git fetch --all --prune'
@@ -54,15 +58,17 @@ alias gra='git remote add'
 alias grhh="git reset --hard"
 
 #█▓▒░  IMPORTS
+sourceIf $HOME/.customrc
 sourceIf $HOME/.fzf.zsh
-sourceIf /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-sourceIf /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-sourceIf /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-sourceIf /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpathIf /usr/local/share/zsh-completions
+
+sourceIf /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+sourceIf /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+sourceIf /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+sourceIf /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 #█▓▒░  ZSH FUNCTIONS
 autoload -Uz compinit ; compinit
