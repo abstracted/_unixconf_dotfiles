@@ -53,7 +53,6 @@ alias gr='git remote'
 alias gra='git remote add'
 alias grhh="git reset --hard"
 
-
 #█▓▒░  IMPORTS
 sourceIf $HOME/.fzf.zsh
 sourceIf /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -64,6 +63,9 @@ sourceIf /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpathIf /usr/local/share/zsh-completions
+
+#█▓▒░  ZSH FUNCTIONS
+autoload -Uz compinit ; compinit
 
 #█▓▒░  OPTIONS
 setopt autocd
