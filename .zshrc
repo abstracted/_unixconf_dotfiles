@@ -32,6 +32,7 @@ alias lsip="curl http://ipecho.net/plain; echo"
 alias route='netstat -rn'
 alias vi='vim'
 alias vim='nvim'
+alias dockerMachineStart='(docker-machine ls | grep default | grep -vi "running" && docker-machine start default) ; eval `docker-machine env default`'
 
 #█▓▒░  GIT
 function gcm() { 
@@ -56,7 +57,6 @@ alias gr='git remote'
 alias gra='git remote add'
 alias grhh="git reset --hard"
 
-
 #█▓▒░  IMPORTS
 sourceIf $HOME/.customrc
 sourceIf $HOME/.fzf.zsh
@@ -69,6 +69,9 @@ sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-sea
 sourceIf /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+#█▓▒░  ZSH FUNCTIONS
+autoload -Uz compinit ; compinit
 
 #█▓▒░  OPTIONS
 setopt autocd
@@ -152,4 +155,3 @@ eval "$(starship init zsh)"
 
 #█▓▒░  STARTUP
 (eval "nohup wal -Rn" > /dev/null 2>&1 &)
-

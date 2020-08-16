@@ -2,8 +2,8 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="CDE"/>
-    <property name="IconThemeName" type="string" value="NsCDE"/>
+    <property name="ThemeName" type="string" value="Solaris-11-Light"/>
+    <property name="IconThemeName" type="string" value="BluecurveRH"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
