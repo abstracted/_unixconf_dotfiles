@@ -1,0 +1,18 @@
+---
+extends: semistandard
+# https://github.com/standard/eslint-config-semistandard
+# sudo npm i -g eslint-plugin-promise eslint-plugin-standard eslint-plugin-node eslint-plugin-import eslint-config-standareslint-config-semistandard
+rules:
+  no-undef: warn
+parserOptions:
+  ecmaVersion: 6
+  impliedStrict: true
+env:
+  browser: true
+  node: true
+  commonjs: true
+  jquery: true
+  es6: true
+  es2017: true
+  es2020: true
+  es2021: true
