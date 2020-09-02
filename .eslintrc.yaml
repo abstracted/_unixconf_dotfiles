@@ -21,10 +21,15 @@ extends:
   - semistandard
 rules:
   no-undef: warn
-  object-curly-spacing: always
-  array-bracket-spacing: always
+  object-curly-spacing:
+    - error
+    - always
+  array-bracket-spacing:
+    - error
+    - always
   no-multiple-empty-lines:
-    max: 2
+    - error
+    - max: 2
 parserOptions:
   ecmaVersion: 6
   impliedStrict: true
