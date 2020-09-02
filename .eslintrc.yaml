@@ -3,14 +3,19 @@
 # Docs: https://github.com/standard/eslint-config-semistandard
 # Installation: sudo npm i -g eslint-plugin-promise eslint-plugin-standard eslint-plugin-node eslint-plugin-import eslint-config-standard eslint-config-semistandard
 # VSCode integration:
-#   - Eslint broke global module usage by default and needs the following work arounds
-#   - https://github.com/eslint/eslint/issues/11914
-#   - vscode settings.json:
-#      "eslint.options": {
+#   Eslint broke global module usage by default and needs the following work arounds
+#   https://github.com/eslint/eslint/issues/11914
+#   vscode settings.json:
+#      - "eslint.options": {
 #        "resolvePluginsRelativeTo": "/usr/lib/node_modules",
 #        "configFile": "/home/cameron/.eslintrc.yaml"
 #      },
-#   - ln -s /usr/lib/node_modules ~/node_modules
+#      - "eslint.workingDirectories": [
+#        { "mode": "auto" }
+#      ],
+#   Global node modules must be relative to the same path as the config file:
+#     So if your config is located at ~/.eslintrc.yaml, you need to run the following:
+#     - ln -s /usr/lib/node_modules ~/node_modules
 extends: semistandard
 rules:
   no-undef: warn
