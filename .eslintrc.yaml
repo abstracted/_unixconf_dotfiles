@@ -31,7 +31,7 @@ rules:
     - error
     - max: 2
 parserOptions:
-  ecmaVersion: 6
+  ecmaVersion: 8
   impliedStrict: true
 env:
   browser: true
