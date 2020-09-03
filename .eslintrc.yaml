@@ -30,6 +30,7 @@ rules:
   no-multiple-empty-lines:
     - error
     - max: 2
+parser: babel-eslint
 parserOptions:
   ecmaVersion: 8
   impliedStrict: true
