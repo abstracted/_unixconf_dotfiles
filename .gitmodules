@@ -1,3 +1,6 @@
 [submodule ".SpaceVim"]
 	path = .SpaceVim
 	url = https://github.com/SpaceVim/SpaceVim.git
+[submodule ".themes/zorin-desktop-themes"]
+	path = .themes/zorin-desktop-themes
+	url = https://github.com/abstracted/zorin-desktop-themes.git
