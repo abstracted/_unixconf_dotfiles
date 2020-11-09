@@ -69,6 +69,8 @@ sourceIf /usr/local/share/zsh-history-substring-search/zsh-history-substring-sea
 sourceIf /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 sourceIf /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+sourceIf /usr/share/nvm/init-nvm.sh
+
 
 #█▓▒░  ZSH FUNCTIONS
 autoload -Uz compinit ; compinit
