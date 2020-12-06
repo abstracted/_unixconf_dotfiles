@@ -6,7 +6,7 @@
 
 #█▓▒░ FUNCTIONS
 function pathIf () {
-  [ -e "$1" ] && export PATH="$PATH:$1";
+  [ -e "$1" ] && export PATH="$PATH:$1"
 }
 function sourceIf() {
   [ -e "$1" ] && source $1
@@ -14,10 +14,6 @@ function sourceIf() {
 function fpathIf() {
   [ -e "$1" ] && fpath=($1 $fpath)
 }
-
-#█▓▒░ MODULES
-autoload -Uz compinit
-compinit
 
 #█▓▒░  ALIAS
 [[ `uname` == "Linux" ]] && sourceIf $HOME/.aliasrc_arch
@@ -58,8 +54,6 @@ alias gra='git remote add'
 alias grhh="git reset --hard"
 
 #█▓▒░  IMPORTS
-sourceIf $HOME/.customrc
-sourceIf $HOME/.fzf.zsh
 fpathIf /usr/local/share/zsh-completions
 
 sourceIf /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -141,7 +135,6 @@ export LESS_TERMCAP_ZW="$(tput rsupm)";
 export LESS="--RAW-CONTROL-CHARS";
 
 #█▓▒░  VARS
-export QT_QPA_PLATFORMTHEME="qt5ct";
 export TERM=xterm
 
 #█▓▒░  PATH
