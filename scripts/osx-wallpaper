@@ -9,7 +9,7 @@ function set_wallpaper() {
 }
 
 function set_pywal() {
-  wal --saturate 0.2 -i $1 -n
+  wal --backend colorz --saturate 0.3 -i $1 -n
 }
 
 function set_yabai() {
