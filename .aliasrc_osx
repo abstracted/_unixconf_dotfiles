@@ -1,1 +1,9 @@
 alias lsfonts="system_profiler SPFontsDataType | less"
+alias find="gfind"
+
+alias install="brew install"
+alias search="brew search"
+alias remove="brew uninstall"
+alias purge="brew uninstall"
+alias upgrade="brew upgrade"
+alias update="brew upgrade"
